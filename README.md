@@ -20,3 +20,4 @@ Our work builds upon and is inspired by the following projects. We sincerely app
 - [llama-cookbook](https://github.com/meta-llama/llama-cookbook)
 - [LLaMA Guard-3](https://huggingface.co/meta-llama/Llama-Guard-3-8B)
 - [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)
+- [Beavertails](https://github.com/PKU-Alignment/beavertails)
