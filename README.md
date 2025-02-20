@@ -10,7 +10,7 @@ ThinkGuard is fine-tuned from [LLaMA-Guard-3-8B](https://huggingface.co/meta-lla
 
 Model at huggingface: [ThinkGuard](https://huggingface.co/Rakancorle1/ThinkGuard)
 
-For more details, refer to our paper: *ThinkGuard: Deliberative Slow Thinking Leads to Cautious Guardrails*.
+For more details, refer to our paper: [ThinkGuard: Deliberative Slow Thinking Leads to Cautious Guardrails](https://arxiv.org/abs/2502.13458).
 
 ![ThinkGuard Model](./Figure/ThinkGuard.png)
 
