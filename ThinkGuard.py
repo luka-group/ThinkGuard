@@ -77,7 +77,7 @@ def evaluate_safety(prompt_1, prompt_2, category_list = [], categories = []):
     return results
 
 
-
+# "Beavertails dataset"
 results = []
 for _, row in tqdm(df.iterrows(), total=len(df), desc="Evaluating prompts"):
     prompt_bt = row['prompt']
@@ -90,6 +90,69 @@ for _, row in tqdm(df.iterrows(), total=len(df), desc="Evaluating prompts"):
         "response": response_bt,
         "model_output": output
     })
+
+# "ToxicChat dataset"
+# results = []
+# for _, row in tqdm(df_toxic.iterrows(), total=len(df_toxic), desc="Evaluating prompts"):
+#     prompt_toxic = row['user_input']
+#     response_toxic = row['model_output']
+#     output = evaluate_safety(prompt_1=prompt_toxic, prompt_2=response_toxic)
+#     results.append({
+#         "prompt": prompt_toxic,
+#         "response": response_toxic,
+#         "model_output": output
+#     })
+
+
+# "wildguardmix dataset"
+# results = []
+# for _, row in tqdm(df_wild.iterrows(), total=len(df_wild), desc="Evaluating prompts"):
+#     prompt_wild = row['prompt']
+#     response_wild = row['response']
+#     output = evaluate_safety(prompt_1=prompt_wild, prompt_2=response_wild)
+#     results.append({
+#         "prompt": prompt_wild,
+#         "response": response_wild,
+#         "model_output": output
+#     })
+
+# "openai moderation dataset"
+# results = []
+# predictions = []
+# labels = []
+# for _, row in tqdm(df_moderation.iterrows(), total=len(df_moderation), desc="Evaluating prompts"):
+#     prompt_oai = row['prompt']
+#     label_values = row[['S', 'H', 'V', 'HR', 'SH', 'S3','H2','V2']].values
+
+#     model_output = evaluate_safety(prompt_1=prompt_oai)
+
+#     is_safe = model_output.lower().startswith("safe")
+#     is_unsafe = model_output.lower().startswith("unsafe")
+
+#     if is_safe:
+#         if all(label == 0 for label in label_values):
+#             predictions.append(0)  
+#         else:
+#             predictions.append(-1) 
+#     elif is_unsafe:
+#         if any(label == 1 for label in label_values):
+#             predictions.append(1)  
+#         else:
+#             predictions.append(-1) 
+#     else:
+#         predictions.append(-1) 
+
+#     labels.append(1 if any(label == 1 for label in label_values) else 0)
+
+#     results.append({
+#         "prompt": prompt_oai,
+#         "model_output": model_output,
+#         "predicted_safe": is_safe,
+#         "predicted_unsafe": is_unsafe,
+#         "labels": label_values.tolist()
+#     })
+
+
 
 output_path = 'ThinkGuard_cla_results_3k.json'
 with open(output_path, 'w', encoding='utf-8') as f:
