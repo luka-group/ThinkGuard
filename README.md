@@ -21,3 +21,15 @@ Our work builds upon and is inspired by the following projects. We sincerely app
 - [LLaMA Guard-3](https://huggingface.co/meta-llama/Llama-Guard-3-8B)
 - [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)
 - [Beavertails](https://github.com/PKU-Alignment/beavertails)
+
+## Citation
+
+If you find our work helpful, please consider citing:
+
+```bibtex
+@article{wen2025thinkguard,
+  title={ThinkGuard: Deliberative Slow Thinking Leads to Cautious Guardrails},
+  author={Xiaofei Wen and Wenxuan Zhou and Wenjie Jacky Mo and Muhao Chen},
+  year={2025},
+  url={https://arxiv.org/abs/2502.13458}
+}
